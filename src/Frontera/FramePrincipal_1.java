@@ -5,20 +5,26 @@
  */
 package Frontera;
 
+import Entidad.Sistema;
+import Entidad.Usuario;
+import java.util.ArrayList;
+
 /**
  *
- * @author Estudiante
+ * @author User
  */
-public class FramePrincipal extends javax.swing.JFrame {
-    
-    private Registro registro = new Registro ();
-    private Ingreso ingreso = new Ingreso ();
-
+public class FramePrincipal_1 extends javax.swing.JFrame {
+    private Registro_1 registro=new Registro_1();
+    private Ingreso_1 ingreso= new Ingreso_1();
     /**
      * Creates new form FramePrincipal
      */
-    public FramePrincipal() {
+    public static Sistema sistema= new Sistema();
+    
+    
+    public FramePrincipal_1() {
         initComponents();
+        inicializacion();
     }
 
     /**
@@ -30,6 +36,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
         RegistroB = new javax.swing.JButton();
         IngresoB = new javax.swing.JButton();
@@ -62,40 +69,51 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(IngresoB);
 
-        PanelPrincipal.setLayout(new java.awt.BorderLayout());
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+        );
+
+        PanelPrincipal.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-            .addComponent(PanelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 253, Short.MAX_VALUE))
+                .addGap(0, 233, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void IngresoBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoBActionPerformed
-        PanelPrincipal.setVisible(false);
-        PanelPrincipal.removeAll(); 
-        PanelPrincipal.add(ingreso);
-        PanelPrincipal.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_IngresoBActionPerformed
-
     private void RegistroBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroBActionPerformed
-        PanelPrincipal.setVisible(false);
-        PanelPrincipal.removeAll(); 
-        PanelPrincipal.add(registro);
-        PanelPrincipal.setVisible(true);// TODO add your handling code here:
+       PanelPrincipal.setVisible(false);
+       PanelPrincipal.removeAll();
+       PanelPrincipal.add(registro);
+       PanelPrincipal.setVisible(true);
     }//GEN-LAST:event_RegistroBActionPerformed
+
+    private void IngresoBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresoBActionPerformed
+       PanelPrincipal.setVisible(false);
+       PanelPrincipal.removeAll();
+       PanelPrincipal.add(ingreso);
+       PanelPrincipal.setVisible(true);
+    }//GEN-LAST:event_IngresoBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,28 +132,58 @@ public class FramePrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FramePrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FramePrincipal_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FramePrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FramePrincipal_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FramePrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FramePrincipal_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FramePrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FramePrincipal_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FramePrincipal().setVisible(true);
+                new FramePrincipal_1().setVisible(true);
             }
         });
+    }
+    
+    public void inicializacion(){
+        ArrayList<Usuario> usuarios= new ArrayList<Usuario>();
+        
+        
+        Usuario a= new Usuario();
+        Usuario b= new Usuario();
+        Usuario c= new Usuario();
+        
+        a.setNombre("juan");
+        a.setPassword("1234");
+        b.setNombre("pedro");
+        b.setPassword("123");
+        c.setNombre("maria");
+        c.setPassword("12345");
+        
+        usuarios.add(a);
+        usuarios.add(b);
+        usuarios.add(c);
+        
+        sistema.setUsuarios(usuarios);
+        
+        for(Usuario u: sistema.getUsuarios()){
+            System.out.println(u.getNombre());
+            System.out.println(u.getPassword());
+            System.out.println("---------------");
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton IngresoB;
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JButton RegistroB;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }
